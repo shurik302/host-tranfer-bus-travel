@@ -5,12 +5,12 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const serverless = require('serverless-http');
 
-const router = require('./router/index');
-const ticketsRouter = require('./router/ticketRoutes');
-const paymentRouter = require('./router/paymentRoutes');
-const errorMiddleware = require('./middlewares/error-middleware');
-const flightRoutes = require('./router/flightRoutes');
-const cityRoutes = require('./router/cityRoutes');
+const router = require('../router/index'); // Обратите внимание на путь
+const ticketsRouter = require('../router/ticketRoutes'); // Обратите внимание на путь
+const paymentRouter = require('../router/paymentRoutes'); // Обратите внимание на путь
+const errorMiddleware = require('../middlewares/error-middleware'); // Обратите внимание на путь
+const flightRoutes = require('../router/flightRoutes'); // Обратите внимание на путь
+const cityRoutes = require('../router/cityRoutes'); // Обратите внимание на путь
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: ['http://localhost:3000', 'http://localhost:3001'], // Разрешение запросов из нескольких источников
 }));
 
 app.use("/api", router);

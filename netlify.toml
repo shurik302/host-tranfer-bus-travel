@@ -1,12 +1,12 @@
 [build]
   base = "client"
   publish = "build"
-  command = "npm run build"
+  command = "CI= npm run build"
 
 [functions]
-  directory = "../server/functions"
+  directory = "server/functions"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/index"
   status = 200
