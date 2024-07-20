@@ -1,9 +1,10 @@
 [build]
-  publish = "client/build"
+  base = "client"
+  publish = "build"
   command = "npm run build"
 
 [functions]
-  directory = "server/functions"
+  directory = "../server/functions"
 
 [[redirects]]
   from = "/api/*"
